@@ -3,4 +3,4 @@
 pandas
 dash
 plotly_express
-waitress
+gunicorn

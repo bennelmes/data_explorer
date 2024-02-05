@@ -5,6 +5,7 @@ from helpers import co2_ppm_df
 df = co2_ppm_df()
 
 app = Dash(__name__)
+server = app.server
 
 app.layout = html.Div([
     # html.Div(children='Hello World & Ben'),
@@ -39,5 +40,5 @@ def update_graph(value):
     return fig
 
 if __name__ == '__main__':
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
+    
+    app.run()
