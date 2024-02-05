@@ -1,9 +1,8 @@
 from dash import Dash, html, dash_table, dcc, callback, Output, Input
 import plotly_express as px
-from helpers import download_latest, co2_ppm_df
+from helpers import co2_ppm_df
 
-download_latest(dir='assets/')
-df = co2_ppm_df(dir='assets/')
+df = co2_ppm_df()
 
 app = Dash(__name__)
 
