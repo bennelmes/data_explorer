@@ -2,13 +2,8 @@ import requests
 import pandas as pd
 
 
-def download_latest(dir='data/'):
 
-        r = requests.get('https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.csv')
-        with open(dir + 'co2_mm_mlo.csv', 'wb') as f:
-                f.write(r.content)
-
-def co2_ppm_df(dir='data/'):
+def co2_ppm_df():
         # df = pd.read_csv(dir+'co2_mm_mlo.csv', encoding='utf-8', comment='#')
         df = pd.read_csv('https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.csv', comment='#')
         df['date'] = df.apply(lambda row: pd.to_datetime(str(int(row.year)) + '-' + str(int(row.month)), format='%Y-%m'), axis=1)
