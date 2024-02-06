@@ -11,7 +11,7 @@ app.layout = html.Div([
     # html.Div(children='Hello World & Ben'),
     # dash_table.DataTable(data=df.to_dict('records'), page_size=10),
     # dcc.Graph(figure=px.line(df, x='date', y=['average', 'deseasonalized'])),
-    dcc.Graph(id='graph-content', style={'width': '500px', 'height': '1200px'}),
+    dcc.Graph(id='graph-content', style={'width': '500', 'height': '1200', 'autosize': True}),
     html.Div(
         children=html.P('Source: Maona Loa Observatory, Dr. Pieter Tans, NOAA/GML (gml.noaa.gov/ccgg/trends/) and Dr. Ralph Keeling, Scripps Institution of Oceanography (scrippsco2.ucsd.edu/).')
         ),
