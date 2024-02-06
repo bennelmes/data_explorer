@@ -17,7 +17,7 @@ app.layout = html.Div([
 ])
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 
 
 # from dash import Dash, html, dash_table, dcc, callback, Output, Input
