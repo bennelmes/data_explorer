@@ -32,13 +32,13 @@ layout = dbc.Container([
                 ),
             dbc.Col(
                 [
-                    dbc.Row(dcc.Graph(id='graph-content', style={'width': '800', 'height': '500', 'autosize': False}), align='right'),
+                    dbc.Row(dcc.Graph(id='graph-content', style={'autosize': True}), align='right'),
                 ],
                 width = 8
                 )
         ]
     ),
-    dbc.Row(dbc.Row(html.P('Source: Maona Loa Observatory, Dr. Pieter Tans, NOAA/GML (gml.noaa.gov/ccgg/trends/) and Dr. Ralph Keeling, Scripps Institution of Oceanography (scrippsco2.ucsd.edu/).'), align='center')
+    dbc.Row(dbc.Row(html.P('Source: Maona Loa Observatory, Dr. Pieter Tans, NOAA/GML (gml.noaa.gov/ccgg/trends/) and Dr. Ralph Keeling, Scripps Institution of Oceanography (scrippsco2.ucsd.edu/).'), align='center'),
 )
 ],
 fluid=True
