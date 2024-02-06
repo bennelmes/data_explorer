@@ -24,7 +24,7 @@ layout = dbc.Container([
                     dbc.Row(html.P('Select the type of data to display'), align='center'),
                     dbc.Row(dcc.RadioItems(df.type_group.unique().tolist(), 'Actual values', id='dropdown-selection', style={'font': 'Arial'}), align='center'),
                     dbc.Row(html.P(''), align='center'),
-                    dbc.Row(html.P('At {m}, atmospheric CO2 concentrations were at {ppm} ppm'.format(m=max_date, ppm=latest_ppm)), align='center'),                
+                    dbc.Row(html.P('At {m}, atmospheric CO2 concentrations were {ppm} ppm'.format(m=max_date, ppm=latest_ppm)), align='center'),                
                     dbc.Row(html.P('This was {ppmc} ppm higher than the same month in the previous year.'.format(ppmc=latest_ppm_change), style={'color': 'red'}), align='center'),
                     dbc.Row(html.P('The record for the highest seasonally adjusted CO2 concentration was last broken in {}.'.format(month_max_ppm)), align='center'),
                 ],
@@ -38,7 +38,12 @@ layout = dbc.Container([
                 )
         ]
     ),
-    dbc.Col([dbc.Row(dbc.Row(html.P('Source: Maona Loa Observatory, Dr. Pieter Tans, NOAA/GML (gml.noaa.gov/ccgg/trends/) and Dr. Ralph Keeling, Scripps Institution of Oceanography (scrippsco2.ucsd.edu/).'), align='center'))], width=10)
+    dbc.Col(
+        [
+            dbc.Row(dbc.Row(html.P('Source: Maona Loa Observatory, Dr. Pieter Tans, NOAA/GML (gml.noaa.gov/ccgg/trends/) and Dr. Ralph Keeling, Scripps Institution of Oceanography (scrippsco2.ucsd.edu/).'), align='center'))
+        ], 
+        width=10
+        )
 ],
 fluid=True
 )
