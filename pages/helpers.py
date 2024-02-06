@@ -12,11 +12,11 @@ def co2_ppm_df():
         df['deseasonalized_change'] = df.deseasonalized.diff(12)
         df = df[df.date > '1959-12-31']
         df = df.melt(id_vars='date')
-        df['type_group'] = df.apply(lambda row: 'Actual values' if row.variable in ['average', 'deseasonalized'] else 'Annual Change', axis=1)
+        df['type_group'] = df.apply(lambda row: 'Actual values' if row.variable in ['average', 'deseasonalized'] else 'Annual change', axis=1)
         df['variable'] = df.variable.map({
                 'deseasonalized': 'Seasonally adjusted',
                 'average': 'Month Average',
-                'deseasonalized_change': 'Annual change in seasonally adjusted value'
+                'deseasonalized_change': 'Annual change'
         })
         # df['variable'] = df['variable'].apply(lambda x: x.replace('average_year_change', 'average').replace('deseasonalized_change', 'deseasonalized'))
         return df
