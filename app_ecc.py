@@ -15,7 +15,7 @@ app.layout = html.Div([
     html.Div(
         children=html.P('Source: Maona Loa Observatory, Dr. Pieter Tans, NOAA/GML (gml.noaa.gov/ccgg/trends/) and Dr. Ralph Keeling, Scripps Institution of Oceanography (scrippsco2.ucsd.edu/).')
         ),
-    dcc.Dropdown(df.type_group.unique().tolist(), 'Actual values', id='dropdown-selection'),
+    dcc.RadioItems(df.type_group.unique().tolist(), 'Actual values', id='dropdown-selection'),
 
 ])
 
